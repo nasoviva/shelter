@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: auto;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: black;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+
+a:hover {
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+header {
+    background-image: url(../../assets/images/start-screen-gradient-background.jpg);
+    background-size: cover;
+    
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+    padding: 0 20px;
+    line-height: 50px;
+
+}
+
+.nav-link {
+    color: white;
+}
+
+.start {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider {
+    display: flex;
+    justify-content: space-between;
+}
+
+.help-options {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.section {
+    width: 100%;
+}
+
+@media (max-width: 580px) {
+    .section {
+        width: 100%;
+    }
+
+    .nav-list {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
