@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/favicon.ico">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cozy House</title>
 </head>
@@ -49,7 +50,7 @@
                     </div>
                     <div class="about-right">
                         <h3 class="about-heading">About the shelter “Cozy House”</h3>
-                        <p class="about-p">Currently we have 121 dogs and 342 cats on our hands and statistics show that
+                        <p class="about-first-p">Currently we have 121 dogs and 342 cats on our hands and statistics show that
                             only 20% of them will find a family. The others will continue to live with us and will be
                             waiting for a lucky chance to become dearly loved.</p>
                         <p class="about-p">We feed our wards with the best food and make sure that they do not get sick,
@@ -58,31 +59,38 @@
                             staff. Taking care of the animals, they become attached to the pets and would hardly ever
                             leave them alone.</p>
                     </div>
-
                 </div>
             </section>
         </div>
         <div class="container">
             <section class="section" id="pets">
+                <div class="pets">
                 <h3 class="pets-heading">Our friends who are looking for a house</h3>
                 <div class="slider">
-                    <div>
+                    <div class="slider-button-left">
+                        <img class="slider-button-left-img" src="../../assets/icons/button_arrow-left.png" alt="button">
+                    </div>
+                    <div class="slider-el slider-left">
                         <img class="slider-img" src="../../assets/images/pets-katrine.png" alt="pet">
                         <p class="slider-name">Katrine</p>
-                        <button class="slider-button">Learn more</button>
+                        <button class="pets-button slider-button">Learn more</button>
                     </div>
-                    <div>
+                    <div class="slider-el slider-center">
                         <img class="slider-img" src="../../assets/images/pets-jennifer.png" alt="pet">
                         <p class="slider-name">Jennifer</p>
-                        <button class="slider-button">Learn more</button>
+                        <button class="pets-button slider-button">Learn more</button>
                     </div>
-                    <div>
+                    <div class="slider-el slider-right">
                         <img class="slider-img" src="../../assets/images/pets-woody.png" alt="pet">
                         <p class="slider-name">Woody</p>
-                        <button class="slider-button">Learn more</button>
+                        <button class="pets-button slider-button">Learn more</button>
+                    </div>
+                    <div class="slider-button-right">
+                        <img class="slider-button-right-img" src="../../assets/icons/button_arrow-right.png" alt="button">
                     </div>
                 </div>
-                <button class="pets-button">Get to know the rest</button>
+                <button class="pets-button pets-button-bottom">Get to know the rest</button>
+            </div>
             </section>
         </div>
         <div class="container">
@@ -90,58 +98,79 @@
                 <h3 class="help-heading">How you can help our shelter</h3>
                 <ul class="help-options">
                     <li class="help-option">
-                        <img class="help-option-img" src="../../assets/images/icon-pet-food.svg" alt="Pet food">
+                        <img class="help-option-img" src="../../assets/icons/icon-pet-food.svg" alt="Pet food">
                         <p class="help-option-p">Pet food</p>
                     </li>
                     <li class="help-option">
-                        <img class="help-option-img" src="../../assets/images/icon-transportation.svg"
+                        <img class="help-option-img" src="../../assets/icons/icon-transportation.svg"
                             alt="Transportation">
                         <p class="help-option-p">Transportation</p>
                     </li>
                     <li class="help-option">
-                        <img class="help-option-img" src="../../assets/images/icon-toys.svg" alt="Toys">
+                        <img class="help-option-img" src="../../assets/icons/icon-toys.svg" alt="Toys">
                         <p class="help-option-p">Toys</p>
                     </li>
                     <li class="help-option">
-                        <img class="help-option-img" src="../../assets/images/icon-bowls-and-cups.svg"
+                        <img class="help-option-img" src="../../assets/icons/icon-bowls-and-cups.svg"
                             alt="Bowls and cups">
                         <p class="help-option-p">Bowls and cups</p>
                     </li>
                     <li class="help-option">
-                        <img class="help-option-img" src="../../assets/images/icon-shampoos.svg" alt="Shampoos">
+                        <img class="help-option-img" src="../../assets/icons/icon-shampoos.svg" alt="Shampoos">
                         <p class="help-option-p">Shampoos</p>
                     </li>
                     <li class="help-option">
-                        <img class="help-option-img" src="../../assets/images/icon-vitamins.svg" alt="Vitamins">
+                        <img class="help-option-img" src="../../assets/icons/icon-vitamins.svg" alt="Vitamins">
                         <p class="help-option-p">Vitamins</p>
                     </li>
                     <li class="help-option">
-                        <img class="help-option-img" src="../../assets/images/icon-medicines.svg" alt="Medicines">
+                        <img class="help-option-img" src="../../assets/icons/icon-medicines.svg" alt="Medicines">
                         <p class="help-option-p">Medicines</p>
                     </li>
                     <li class="help-option">
-                        <img class="help-option-img" src="../../assets/images/icon-collars-leashes.svg"
+                        <img class="help-option-img" src="../../assets/icons/icon-collars-leashes.svg"
                             alt="Collars / leashes">
                         <p class="help-option-p">Collars / leashes</p>
                     </li>
                     <li class="help-option">
-                        <img class="help-option-img" src="../../assets/images/icon-sleeping-area.svg"
+                        <img class="help-option-img" src="../../assets/icons/icon-sleeping-area.svg"
                             alt="Sleeping areas">
                         <p class="help-option-p">Sleeping areas</p>
                     </li>
                 </ul>
             </section>
         </div>
+        <div class="container">
+            <section class="section" id="donate">
+                <div class="donation">
+                    <div class="donation-left">
+                        <img class="donation-img" src="../../assets/images/donation-dog.png" alt="dog">
+                    </div>
+                    <div class="donation-right">
+                        <h3 class="donation-heading">You can also make a donation</h3>
+                        <h5 class="donation-subheading">Name of the bank / Type of bank account</h5>
+                        <p class="donation-data"><img class="card-img" src="../../assets/icons/credit-card.svg" alt="credit-card">8380 2880 8028 8791 7435</p>
+                        <p class="donation-p">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
     <footer class="footer">
-        <div class="container">
-            <ul class="footer-list">
-                <li>
-                    <p class="footer-year">2024</p>
-                </li>
-                <li><a href="https://rs.school/"><img class="footer-logo" src="./assets/img/rslogo.svg"
-                            alt="logoRSSchool"></a></li>
-            </ul>
+        <div class="container footer-container">
+            <div class="footer-left">
+                <h3 class="footer-heading">For questions and suggestions</h3>
+                <p class="footer-p"><img class="card-img" src="../../assets/icons/icon-email.svg" alt="email">email@shelter.com</p>
+                <p class="footer-p"><img class="card-img" src="../../assets/icons/icon-phone.svg" alt="phone">+13 674 567 75 54</p>
+            </div>
+            <div class="footer-center">
+                <h3 class="footer-heading">We are waiting for your visit</h3>
+                <p class="footer-p"><img class="card-img" src="../../assets/icons/pin.png" alt="pin">1 Central Street, Boston (entrance from the store)</p>
+                <p class="footer-p"><img class="card-img" src="../../assets/icons/pin.png" alt="pin">18 South Park, London </p>
+            </div>
+            <div class="footer-right">
+                <img class="footer-img" src="../../assets/images/footer-puppy.png" alt="puppy">
+            </div>
         </div>
     </footer>
 </body>
