@@ -17,12 +17,14 @@
         <div class="container header-container">
             <nav class="nav">
                 <div class="logo">
+                    <a class="logo-link" href="">
                     <p class="logo-title">Cozy House</p>
                     <p class="logo-subtitle">Shelter for pets in Boston</p>
+                    </a>
                 </div>
                 <ul class="nav-list">
-                    <li class="nav-item"><a class="nav-link" href="#about">About the shelter</a></li>
-                    <li class="nav-item"><a  class="nav-link" href="#our-pets">Our pets</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-first" href="#about">About the shelter</a></li>
+                    <li class="nav-item"><a  class="nav-link" href="../pets/index.html">Our pets</a></li>
                     <li class="nav-item"><a  class="nav-link" href="#help">Help the shelter</a></li>
                     <li class="nav-item"><a  class="nav-link" href="#contacts">Contacts</a></li>
                 </ul>
@@ -65,11 +67,9 @@
         <div class="container">
             <section class="section" id="our-friends">
                 <div class="our-friends">
-                <h3 class="our-friends-heading">Our friends who are looking for a house</h3>
+                <h3 class="our-friends-heading">Our friends who<br>are looking for a house</h3>
                 <div class="slider">
-                    <div class="slider-button-left">
-                        <img class="slider-button-left-img" src="../../assets/icons/button_arrow-left.png" alt="button">
-                    </div>
+                    <div class="slider-button-left"></div>
                     <div class="slider-el slider-left">
                         <img class="slider-img" src="../../assets/images/pets-katrine.png" alt="pet">
                         <p class="slider-name">Katrine</p>
@@ -85,11 +85,9 @@
                         <p class="slider-name">Woody</p>
                         <button class="our-friends-button slider-button">Learn more</button>
                     </div>
-                    <div class="slider-button-right">
-                        <img class="slider-button-right-img" src="../../assets/icons/button_arrow-right.png" alt="button">
-                    </div>
+                    <div class="slider-button-right"></div>
                 </div>
-                <button class="our-friends-button our-friends-button-bottom">Get to know the rest</button>
+                <button class="our-friends-button our-friends-button-bottom" onclick="window.location.href='../pets/index.html'">Get to know the rest</button>
             </div>
             </section>
         </div>
@@ -100,45 +98,45 @@
                 <ul class="help-options help-options-row-1">
                     <li class="help-option">
                         <img class="help-option-img" src="../../assets/icons/icon-pet-food.svg" alt="Pet food">
-                        <p class="help-option-p">Pet food</p>
+                        <h4 class="help-option-h">Pet food</h4>
                     </li>
                     <li class="help-option">
                         <img class="help-option-img" src="../../assets/icons/icon-transportation.svg"
                             alt="Transportation">
-                        <p class="help-option-p">Transportation</p>
+                        <h4 class="help-option-h">Transportation</h4>
                     </li>
                     <li class="help-option">
                         <img class="help-option-img" src="../../assets/icons/icon-toys.svg" alt="Toys">
-                        <p class="help-option-p">Toys</p>
+                        <h4 class="help-option-h">Toys</h4>
                     </li>
                     <li class="help-option">
                         <img class="help-option-img" src="../../assets/icons/icon-bowls-and-cups.svg"
                             alt="Bowls and cups">
-                        <p class="help-option-p">Bowls and cups</p>
+                        <h4 class="help-option-h">Bowls and cups</h4>
                     </li>
                     <li class="help-option">
                         <img class="help-option-img" src="../../assets/icons/icon-shampoos.svg" alt="Shampoos">
-                        <p class="help-option-p">Shampoos</p>
+                        <h4 class="help-option-h">Shampoos</h4>
                     </li>
                 </ul>
                 <ul class="help-options help-options-row-2">
                     <li class="help-option">
                         <img class="help-option-img" src="../../assets/icons/icon-vitamins.svg" alt="Vitamins">
-                        <p class="help-option-p">Vitamins</p>
+                        <h4 class="help-option-h">Vitamins</h4>
                     </li>
                     <li class="help-option">
                         <img class="help-option-img" src="../../assets/icons/icon-medicines.svg" alt="Medicines">
-                        <p class="help-option-p">Medicines</p>
+                        <h4 class="help-option-h">Medicines</h4>
                     </li>
-                    <li class="help-optionr">
+                    <li class="help-option">
                         <img class="help-option-img" src="../../assets/icons/icon-collars-leashes.svg"
                             alt="Collars / leashes">
-                        <p class="help-option-p">Collars / leashes</p>
+                        <h4 class="help-option-h">Collars / leashes</h4>
                     </li>
                     <li class="help-option">
                         <img class="help-option-img" src="../../assets/icons/icon-sleeping-area.svg"
                             alt="Sleeping areas">
-                        <p class="help-option-p">Sleeping areas</p>
+                        <h4 class="help-option-h">Sleeping areas</h4>
                     </li>
                 </ul>
             </div>
@@ -154,8 +152,10 @@
                         <h3 class="in-addition-heading">You can also make a donation</h3>
                         <h5 class="in-addition-subheading">Name of the bank / Type of bank account</h5>
                         <div class="in-addition-data">
+                            <a class="data-link" href="#" onclick="event.preventDefault();">
                             <img class="icon-img" src="../../assets/icons/credit-card.svg" alt="credit-card">
                             <p class="in-addition-tel">8380 2880 8028 8791 7435</p>
+                            </a>
                         </div>
                         <p class="in-addition-p">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
                     </div>
