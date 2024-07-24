@@ -246,7 +246,7 @@ a {
 
 .slider-paginator-prev:hover,
 .slider-paginator-first:hover {
-    cursor: default;
+    cursor: pointer;
     pointer-events: none;
 }
 
