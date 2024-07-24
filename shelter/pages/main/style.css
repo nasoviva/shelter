@@ -60,6 +60,12 @@ button {
     border-radius: 28px;
 }
 
+button:hover {
+    background-color: #FDDCC4;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
 a {
     text-decoration: none;
     color: #000;
@@ -196,12 +202,6 @@ a {
     width: 207px;
 }
 
-button:hover {
-    background-color: #FDDCC4;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
 .not-only-right {
     position: relative;
     width: 698px;
@@ -254,11 +254,18 @@ button:hover {
     margin-bottom: 58px;
     display: flex;
     justify-content: space-between;
+    gap: 53px;
+}
+
+.slider-elements {
+    display: flex;
+    justify-content: space-between;
+    gap: 90px;
 }
 
 .slider-el {
     background-color: #FAFAFA;
-    margin-right: 90px;
+    border-radius: 9px;
     font-family: 'Georgia', sans-serif;
     font-size: 20px;
     letter-spacing: 0.06em;
@@ -292,32 +299,20 @@ button:hover {
     border: 2px solid #FDDCC4;
 }
 
-.slider-right {
-    margin-right: 0;
-}
-
-.slider-button-left {
-    margin: 192px 53px 192px 0;
-    background-image: url(../../assets/icons/button_arrow-left.png);
+.paginator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 52px;
     height: 52px;
+    border-radius: 100%;
+    border: 2px solid #F1CDB3;
+    margin: 192px 0;
 }
 
-.slider-button-left:hover {
-    background-image: url(../../assets/icons/button_arrow_hover-left.png);
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.slider-button-right {
-    margin: 192px 0 192px 53px;
-    background-image: url(../../assets/icons/button_arrow-right.png);
-    width: 52px;
-    height: 52px;
-}
-
-.slider-button-right:hover {
-    background-image: url(../../assets/icons/button_arrow_hover-right.png);
+.paginator:hover {
+    border: 2px solid #FDDCC4;       
+    background-color: #FDDCC4;
     cursor: pointer;
     transition: 0.3s;
 }
