@@ -259,11 +259,14 @@ a {
     transition: 0.3s;
 }
 
-.footer-container {
-    display: flex;
+.footer {
     background-image: url(../../assets/images/footer-background.png);
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.footer-container {
+    display: flex;
     padding: 40px 40px 0 40px;
 }
 
