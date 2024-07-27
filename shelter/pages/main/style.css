@@ -295,8 +295,11 @@ a {
     letter-spacing: 0.04em;
 }
 
-.slider-button:hover {
-    border: 2px solid #FDDCC4;
+.slider-el:hover > .slider-button {
+    border: 2px solid #FDDCC4;       
+    background-color: #FDDCC4;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .paginator {
