@@ -127,19 +127,11 @@ a {
     position: relative;
 }
 
-.nav-link::before {
-    content: '';
-    position: absolute;
-    bottom: -7px;
-    width: 0;
-    height: 2px;
-    background-color: #F1CDB3;
-    transition: 0.3s;
-}
-
-.nav-link:hover:before {
+.nav-link:hover {
+    color: #292929;
     cursor: pointer;
     width: 100%;
+    transition: 0.3s;
 }
 
 .nav-link-first {
@@ -152,8 +144,11 @@ a {
     pointer-events: none;
 }
 
-.our-friends {
+.main {
     background-color: #F6F6F6;
+}
+
+.our-friends {
     padding: 80px 40px 100px 40px;
 }
 
@@ -244,13 +239,18 @@ a {
     color: #292929;
 }
 
+.slider-paginator-active,
 .slider-paginator-prev:hover,
 .slider-paginator-first:hover {
     cursor: pointer;
     pointer-events: none;
 }
 
-.slider-paginator-active:hover,
+.slider-paginator-active {
+    border: 2px solid #FDDCC4;       
+    background-color: #FDDCC4;
+}
+
 .slider-paginator-next:hover,
 .slider-paginator-last:hover {
     border: 2px solid #FDDCC4;       

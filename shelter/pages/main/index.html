@@ -14,37 +14,42 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="container header-container">
-            <nav class="nav">
-                <div class="logo">
-                    <a class="logo-link" href="">
-                        <p class="logo-title">Cozy House</p>
-                        <p class="logo-subtitle">Shelter for pets in Boston</p>
-                    </a>
+        <header class="header">
+         <div class="background-header">    
+            <div class="container ">
+                <nav class="nav">
+                    <div class="logo">
+                        <a class="logo-link" href="">
+                            <p class="logo-title">Cozy House</p>
+                            <p class="logo-subtitle">Shelter for pets in Boston</p>
+                        </a>
+                    </div>
+                    <ul class="nav-list">
+                        <li class="nav-item"><a class="nav-link nav-link-first" href="#about">About the shelter</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../pets/index.html">Our pets</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#help">Help the shelter</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacts">Contacts</a></li>
+                    </ul>
+                </nav>
+                <div class="not-only">
+                    <div class="not-only-left">
+                        <h1 class="not-only-heading">Not only people need a house</h1>
+                        <p class="not-only-subheading">We offer to give a chance to a little and nice puppy with an
+                            extremely
+                            wide and open heart. He or she will love you more than anybody else in the world, you will see!
+                        </p>
+                        <button class="not-only-button" onclick="window.location.href='#our-friends'">Make a friend</button>
+                    </div>
+                    <div class="not-only-right">
+                        <img class="not-only-img" src="../../assets/images/start-screen-puppy.png" alt="puppy">
+                    </div>
                 </div>
-                <ul class="nav-list">
-                    <li class="nav-item"><a class="nav-link nav-link-first" href="#about">About the shelter</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../pets/index.html">Our pets</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#help">Help the shelter</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacts">Contacts</a></li>
-                </ul>
-            </nav>
-            <div class="not-only">
-                <div class="not-only-left">
-                    <h1 class="not-only-heading">Not only people need a house</h1>
-                    <p class="not-only-subheading">We offer to give a chance to a little and nice puppy with an
-                        extremely
-                        wide and open heart. He or she will love you more than anybody else in the world, you will see!
-                    </p>
-                    <button class="not-only-button" onclick="window.location.href='#our-friends'">Make a friend</button>
-                </div>
-                <div class="not-only-right">
-                    <img class="not-only-img" src="../../assets/images/start-screen-puppy.png" alt="puppy">
-                </div>
+            </header>
             </div>
-        </div>
-    </header>
+
+
+        
+    </div>
     <main class="main main-container">
         <div class="container">
             <section class="section" id="about">
@@ -67,35 +72,37 @@
                 </div>
             </section>
         </div>
-        <div class="container">
-            <section class="section" id="our-friends">
-                <div class="our-friends">
-                    <h3 class="our-friends-heading">Our friends who<br>are looking for a house</h3>
-                    <div class="slider">
-                        <div class="paginator"><img src="../../assets/icons/arrow-prev.png" alt="prev"></div>
-                        <div class="slider-elements">
-                            <div class="slider-el">
-                                <img class="slider-img" src="../../assets/images/pets-katrine.png" alt="pet">
-                                <p class="slider-name">Katrine</p>
-                                <button class="our-friends-button slider-button">Learn more</button>
+        <div class="background-our-friends">
+            <div class="container">
+                <section class="section" id="our-friends">
+                    <div class="our-friends">
+                        <h3 class="our-friends-heading">Our friends who<br>are looking for a house</h3>
+                        <div class="slider">
+                            <div class="paginator"><img src="../../assets/icons/arrow-prev.png" alt="prev"></div>
+                            <div class="slider-elements">
+                                <div class="slider-el">
+                                    <img class="slider-img" src="../../assets/images/pets-katrine.png" alt="pet">
+                                    <p class="slider-name">Katrine</p>
+                                    <button class="our-friends-button slider-button">Learn more</button>
+                                </div>
+                                <div class="slider-el">
+                                    <img class="slider-img" src="../../assets/images/pets-jennifer.png" alt="pet">
+                                    <p class="slider-name">Jennifer</p>
+                                    <button class="our-friends-button slider-button">Learn more</button>
+                                </div>
+                                <div class="slider-el">
+                                    <img class="slider-img" src="../../assets/images/pets-woody.png" alt="pet">
+                                    <p class="slider-name">Woody</p>
+                                    <button class="our-friends-button slider-button">Learn more</button>
+                                </div>
                             </div>
-                            <div class="slider-el">
-                                <img class="slider-img" src="../../assets/images/pets-jennifer.png" alt="pet">
-                                <p class="slider-name">Jennifer</p>
-                                <button class="our-friends-button slider-button">Learn more</button>
-                            </div>
-                            <div class="slider-el">
-                                <img class="slider-img" src="../../assets/images/pets-woody.png" alt="pet">
-                                <p class="slider-name">Woody</p>
-                                <button class="our-friends-button slider-button">Learn more</button>
-                            </div>
+                            <div class="paginator"><img src="../../assets/icons/arrow-next.png" alt="next"></div>
                         </div>
-                        <div class="paginator"><img src="../../assets/icons/arrow-next.png" alt="next"></div>
+                        <button class="our-friends-button our-friends-button-bottom"
+                            onclick="window.location.href='../pets/index.html'">Get to know the rest</button>
                     </div>
-                    <button class="our-friends-button our-friends-button-bottom"
-                        onclick="window.location.href='../pets/index.html'">Get to know the rest</button>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
         <div class="container">
             <section class="section" id="help">
@@ -148,31 +155,34 @@
                 </div>
             </section>
         </div>
-        <div class="container">
-            <section class="section" id="in-addition">
-                <div class="in-addition">
-                    <div class="in-addition-left">
-                        <img class="in-addition-img" src="../../assets/images/donation-dog.png" alt="dog">
-                    </div>
-                    <div class="in-addition-right">
-                        <h3 class="in-addition-heading">You can also make a donation</h3>
-                        <h5 class="in-addition-subheading">Name of the bank / Type of bank account</h5>
-                        <div class="in-addition-data">
-                            <a class="data-link" href="#" onclick="event.preventDefault();">
-                                <img class="icon-img" src="../../assets/icons/credit-card.svg" alt="credit-card">
-                                <p class="in-addition-tel">8380 2880 8028 8791 7435</p>
-                            </a>
+        <div class="background-in-addition">
+            <div class="container">
+                <section class="section" id="in-addition">
+                    <div class="in-addition">
+                        <div class="in-addition-left">
+                            <img class="in-addition-img" src="../../assets/images/donation-dog.png" alt="dog">
                         </div>
-                        <p class="in-addition-p">Legal information and lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent
-                            ultrices maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in
-                            faucibus.</p>
+                        <div class="in-addition-right">
+                            <h3 class="in-addition-heading">You can also make a donation</h3>
+                            <h5 class="in-addition-subheading">Name of the bank / Type of bank account</h5>
+                            <div class="in-addition-data">
+                                <a class="data-link" href="#" onclick="event.preventDefault();">
+                                    <img class="icon-img" src="../../assets/icons/credit-card.svg" alt="credit-card">
+                                    <p class="in-addition-tel">8380 2880 8028 8791 7435</p>
+                                </a>
+                            </div>
+                            <p class="in-addition-p">Legal information and lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent
+                                ultrices maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in
+                                faucibus.</p>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
     </main>
     <footer class="footer">
+        <div class="background-footer">
         <section class="section" id="contacts">
             <div class="container footer-container">
                 <div class="footer-left">
@@ -204,6 +214,7 @@
                 </div>
             </div>
         </section>
+    </div>
     </footer>
     <script src="../index.js"></script>
 </body>

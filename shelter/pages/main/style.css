@@ -52,7 +52,11 @@ h4 {
 }
 
 button {
-    padding: 15px 45px;
+    font-family: 'Georgia', sans-serif;
+    font-size: 17px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    padding: 15px 40px;
     color: #292929;
     font-size: 17px;
     line-height: 130%;
@@ -86,7 +90,7 @@ a {
     }
 }
 
-.header {
+.background-header {
     background-image: url(../../assets/images/start-screen-gradient-background.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -140,22 +144,13 @@ a {
 .nav-link {
     color: #CDCDCD;
     font-weight: 300;
-    position: relative;
 }
 
-.nav-link::before {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    width: 0;
-    height: 2px;
-    background-color: #F1CDB3;
-    transition: 0.3s;
-}
-
-.nav-link:hover:before {
+.nav-link:hover {
+    color: #FFFFFF;
     cursor: pointer;
     width: 100%;
+    transition: 0.3s;
 }
 
 .nav-link-first {
@@ -240,8 +235,11 @@ a {
     margin-bottom: 25px;
 }
 
-.our-friends {
+.background-our-friends {
     background-color: #F6F6F6;
+}
+
+.our-friends {
     padding: 80px 40px 100px 40px;
 }
 
@@ -372,11 +370,14 @@ a {
     font-size: 20px;
 }
 
+.background-in-addition {
+    background-color: #F6F6F6;
+}
+
 .in-addition {
     display: flex;
     justify-content: space-between;
     padding: 80px 182px 92px 182px;
-    background-color: #F6F6F6;
 }
 
 .in-addition-img {
@@ -427,7 +428,7 @@ a {
     color: #B2B2B2;
 }
 
-.footer {
+.background-footer {
     background-image: url(../../assets/images/footer-background.png);
     background-repeat: no-repeat;
     background-size: cover;
