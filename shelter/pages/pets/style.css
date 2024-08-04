@@ -94,8 +94,6 @@ a {
     line-height: 110%;
     letter-spacing: 0.06em;
     color: #545454;
-    -webkit-text-stroke: 1px black;
-    text-shadow: 0 4px 3px rgba(0, 0, 0, 0.25);
     margin-top: 10px;
     margin-bottom: 5px;
 }
