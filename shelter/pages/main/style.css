@@ -90,7 +90,7 @@ a {
     }
 }
 
-.background-header {
+.header {
     background-image: url(../../assets/images/start-screen-gradient-background.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -98,7 +98,6 @@ a {
 
 .container {
     max-width: 1280px;
-    min-width: 1280px;
     margin: 0 auto;
 }
 
@@ -128,7 +127,7 @@ a {
 .nav {
     display: flex;
     justify-content: space-between;
-    padding: 22px 43px 86px 40px;
+    padding: 22px 43px 84px 40px;
 }
 
 .nav-list {
@@ -155,7 +154,7 @@ a {
     text-decoration: underline;
     text-decoration-color: #F1CDB3;
     text-decoration-thickness: 2px;
-    text-underline-offset: 5px;
+    text-underline-offset: 6px;
     cursor: default;
     pointer-events: none;
 }
@@ -186,7 +185,7 @@ a {
 .not-only-subheading {
     color: #CDCDCD;
     font-weight: 300;
-    margin-bottom: 42px;
+    margin-bottom: 43px;
 }
 
 .not-only-button {
@@ -196,16 +195,9 @@ a {
 }
 
 .not-only-right {
-    position: relative;
+    height: 728px;
     width: 698px;
 }
-
-.not-only-img {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
 
 .about {
     display: flex;
@@ -233,7 +225,7 @@ a {
     margin-bottom: 25px;
 }
 
-.background-our-friends {
+#our-friends {
     background-color: #F6F6F6;
 }
 
@@ -329,7 +321,6 @@ a {
 }
 
 .help-heading {
-    margin: 0 440px 60px 440px;
     text-align: center;
 }
 
@@ -340,16 +331,9 @@ a {
 .help-options {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.help-options-row-1 {
-    margin-bottom: 64px;
-}
-
-.help-options-row-2 {
-    margin: 0 84px;
+    justify-content: center;
+    gap: 53px 120px;
+    margin: 58px 0 0;
 }
 
 .help-option {
@@ -360,7 +344,7 @@ a {
 }
 
 .help-option-img {
-    margin-bottom: 22px;
+    margin-bottom: 28px;
 }
 
 .help-option-h {
@@ -368,14 +352,14 @@ a {
     font-size: 20px;
 }
 
-.background-in-addition {
+#in-addition {
     background-color: #F6F6F6;
 }
 
 .in-addition {
     display: flex;
     justify-content: space-between;
-    padding: 80px 182px 92px 182px;
+    padding: 80px 182px 93px 182px;
 }
 
 .in-addition-img {
@@ -426,7 +410,7 @@ a {
     color: #B2B2B2;
 }
 
-.background-footer {
+.footer {
     background-image: url(../../assets/images/footer-background.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -475,12 +459,6 @@ a {
 }
 
 .footer-right {
-    position: relative;
+    height: 310px;
     width: 300px;
-}
-
-.footer-img {
-    position: absolute;
-    bottom: 0;
-    left: 0;
 }
