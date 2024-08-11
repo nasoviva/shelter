@@ -126,6 +126,10 @@ a {
     pointer-events: none;
 }
 
+.burger {
+    display: none;
+}
+
 #our-friends {
     background-color: #F6F6F6;
 }
