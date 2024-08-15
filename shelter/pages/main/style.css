@@ -92,7 +92,6 @@ a {
 }
 
 .container {
-    max-width: 1280px;
     margin: 0 auto;
 }
 
@@ -327,10 +326,6 @@ a {
     text-align: center;
 }
 
-.help-lists {
-    padding: 0 87px;
-}
-
 .help-options {
     display: flex;
     flex-wrap: wrap;
@@ -369,7 +364,7 @@ a {
 
 .in-addition-left {
     position: relative;
-    width: 50%;
+    width: 505px;
 }
 
 .in-addition-img {
@@ -1108,6 +1103,10 @@ a {
 
     .in-addition-img {
         width: calc(260 * 100vw / 320);
+    }
+
+    .in-addition-p {
+        text-align: justify;
     }
 
     .footer-container {
