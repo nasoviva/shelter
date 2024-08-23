@@ -126,8 +126,83 @@ a {
     pointer-events: none;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 320px;
+    height: 100%;
+    background-color: #292929;
+    font-size: 32px;
+    font-weight: 300;
+    text-align: center;
+    line-height: 53px;
+    white-space: nowrap;
+    padding: 248px 38px;
+    z-index: 998;
+    transition: right 0.5s linear;
+}
+
+.mobile-menu .mobile-nav-item {
+    padding-bottom: 40px;
+}
+
+.mobile-menu .nav-link {
+    color: #CDCDCD;
+}
+
+.mobile-menu .nav-link-first {
+    text-underline-offset: 15px;
+    color: #FFFFFF;
+}
+
+.mobile-background {
+    display: none;
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(41, 41, 41, 0);
+    transition: background-color 0.5s linear;
+}
+
+.mobile-background.open {
+    display: block;
+    background-color: rgba(41, 41, 41, 0.6);
+}
+
+.mobile-menu.open {
+    right: 0;
+}
+
 .burger {
     display: none;
+    width: 30px;
+    height: 22px;
+    transition: transform 0.5s linear;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.burger.rotate {
+    transform: rotate(90deg);
+}
+
+.burger-img {
+    display: none;
+    width: 30px;
+    height: 2px;
+    background-color: #000000;
+    margin-bottom: 10px;
+}
+
+.burger.change-color .burger-img {
+    background-color: #F1CDB3;
 }
 
 #our-friends {
@@ -306,42 +381,6 @@ a {
     vertical-align: top;
 }
 
-
-/* @media (max-width: 1280px) {
-
-    .container {
-        max-width: 1280px;
-    }
-
-    .nav {
-        padding-left: calc(40 * 100vw / 1280);
-        padding-right: calc(40 * 100vw / 1280);
-    }
-
-    .nav-list {
-        gap: calc(36 * 100vw / 1280);
-    }
-
-    .footer-container {
-        padding-left: calc(40 * 100vw / 1280);
-        padding-right: calc(40 * 100vw / 1280);
-        gap: calc(128 * 100vw / 1280);
-    }
-
-    .footer-left,
-    .footer-center {
-        width: calc(310 * 100vw / 1280);
-    }
-
-    .footer-right {
-        width: calc(300 * 100vw / 1280);
-    }
-
-    .footer-img {
-        left: calc(24 * 100vw / 1280);
-    }
-} */
-
 @media (max-width: 1024px) {
 
     .footer-container {
@@ -429,6 +468,10 @@ a {
     .burger {
         display: block;
         align-self: center;
+    }
+
+    .burger-img {
+        display: block;
     }
 }
 

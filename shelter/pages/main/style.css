@@ -7,6 +7,7 @@ html {
 }
 
 body {
+    position: relative;
     font-family: 'Arial', sans-serif;
     font-size: 15px;
     font-weight: 400;
@@ -134,6 +135,7 @@ a {
 .nav-link {
     color: #CDCDCD;
     font-weight: 300;
+    z-index: 997;
 }
 
 .nav-link:hover {
@@ -144,6 +146,7 @@ a {
 }
 
 .nav-link-first {
+    color: #FFFFFF;
     text-decoration: underline;
     text-decoration-color: #F1CDB3;
     text-decoration-thickness: 2px;
@@ -152,8 +155,74 @@ a {
     pointer-events: none;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 320px;
+    height: 100%;
+    background-color: #292929;
+    font-size: 32px;
+    font-weight: 300;
+    text-align: center;
+    line-height: 53px;
+    white-space: nowrap;
+    padding: 248px 38px;
+    z-index: 998;
+    transition: right 0.5s linear;
+}
+
+.mobile-menu .mobile-nav-item {
+    padding-bottom: 40px;
+}
+
+.mobile-menu .nav-link-first {
+    text-underline-offset: 15px;
+}
+
+.mobile-background {
+    display: none;
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(41, 41, 41, 0);
+    transition: background-color 0.5s linear;
+}
+
+.mobile-background.open {
+    display: block;
+    background-color: rgba(41, 41, 41, 0.6);
+}
+
+.mobile-menu.open {
+    right: 0;
+}
+
 .burger {
     display: none;
+    width: 30px;
+    height: 22px;
+    transition: transform 0.5s linear;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.burger.rotate {
+    transform: rotate(90deg);
+}
+
+.burger-img {
+    display: none;
+    width: 30px;
+    height: 2px;
+    background-color: #F1CDB3;
+    margin-bottom: 10px;
 }
 
 .not-only {
@@ -549,10 +618,6 @@ a {
         padding-bottom: 54px;
     }
 
-    /* .nav-list {
-        gap: calc(35 * 100vw / 768);
-    } */
-
     .not-only-right {
         max-width: 570px;
         margin-left: auto;
@@ -623,6 +688,10 @@ a {
     .burger {
         display: block;
         align-self: center;
+    }
+
+    .burger-img {
+        display: block;
     }
 }
 
