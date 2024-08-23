@@ -132,6 +132,11 @@ a {
 
 .mobile-menu {
     position: fixed;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
     top: 0;
     right: -350px;
     width: 320px;
@@ -147,16 +152,16 @@ a {
     transition: right 0.5s linear;
 }
 
-.mobile-menu .mobile-nav-item {
-    padding-bottom: 40px;
-}
-
 .mobile-menu .nav-link {
     color: #CDCDCD;
 }
 
 .mobile-menu .nav-link-first {
     text-underline-offset: 15px;
+    color: #FFFFFF;
+}
+
+.mobile-menu .nav-link:hover {
     color: #FFFFFF;
 }
 

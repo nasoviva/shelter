@@ -161,6 +161,11 @@ a {
 
 .mobile-menu {
     position: fixed;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;  
     top: 0;
     right: -350px;
     width: 320px;
@@ -174,10 +179,6 @@ a {
     padding: 248px 38px;
     z-index: 998;
     transition: right 0.5s linear;
-}
-
-.mobile-menu .mobile-nav-item {
-    padding-bottom: 40px;
 }
 
 .mobile-menu .nav-link-first {
