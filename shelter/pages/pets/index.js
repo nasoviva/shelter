@@ -122,6 +122,7 @@ function toggleMenu() {
     burger.classList.toggle("rotate");
     burger.classList.toggle("change-color");
     menu.classList.toggle("open");
+    background.classList.toggle("open");
     if (menu.classList.contains("open")) {
         body.classList.add("no-scroll");
     } else {
@@ -146,10 +147,7 @@ burger.addEventListener("click", toggleMenu);
 // Обработчик клика по фону
 background.addEventListener("click", function(event) {
     // Проверяем, что клик был не на меню
-    if (!menu.contains(event.target) && menu.classList.contains("open")) {
-        toggleMenu();
-    // Проверяем, что клик был не на попапе
-    } else if (!popap.contains(event.target) && popap.classList.contains("open")) {
+    if (!popap.contains(event.target) && popap.classList.contains("open")) {
       togglePopap();
     }
 });
@@ -181,7 +179,7 @@ slidesPets.forEach(slide => {
      <img class="popap-img" src="${data.items[i].img}" alt="${data.items[i].name}">
      <div class="popap-info">
       <h3 class="popap-name">${data.items[i].name}</h3>
-      <h4 class="popap-animal">${data.items[i].breed}</h4>
+      <h4 class="popap-animal">${data.items[i].type} - ${data.items[i].breed}</h4>
       <p class="popap-description">${data.items[i].description}</p>
       <ul class="popap-list">
         <li class="popap-age"><b>Age:</b> ${data.items[i].age}</li>

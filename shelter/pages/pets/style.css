@@ -126,6 +126,10 @@ a {
     pointer-events: none;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 .no-scroll-background {
     display: none;
     top: 0;
@@ -177,7 +181,7 @@ a {
     color: #FFFFFF;
 }
 
-.mobile-background {
+/* .mobile-background {
     display: none;
     top: 0;
     right: 0;
@@ -191,7 +195,7 @@ a {
 .mobile-background.open {
     display: block;
     background-color: rgba(41, 41, 41, 0.6);
-}
+} */
 
 .mobile-menu.open {
     right: 0;
@@ -249,6 +253,7 @@ a {
     justify-content: space-between; 
     width: 900px;
     height: 500px;
+    border-radius: 9px;
     background-color: #FFFFFF;
 }
 
@@ -480,6 +485,30 @@ a {
 
 @media (max-width: 1024px) {
 
+    .popap {
+        width: 630px;
+        height: 350px;
+    }
+    
+    .popap-info {
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 9px;
+    }
+    
+    .popap-description {
+        font-size: 13px;
+        padding: 20px 0 20px;
+    }
+    
+    .popap-list {
+        gap: 6px;
+    }
+    
+    .popap-close {
+        left: 620px;
+    }
+
     .footer-container {
         flex-wrap: wrap;
         justify-content: center;
@@ -580,6 +609,40 @@ a {
 
     .slider-paginators {
         gap: calc(20 * 100vw / 700);
+    }
+
+    .popap {
+        width: 240px;
+        height: 341px;
+    }
+    
+    .popap-img {
+        display: none;
+    }
+    
+    .popap-animal, .popap-name {
+        text-align: center;
+    }
+    
+    .popap.open {
+        left: 50%;
+    }
+    
+    .popap-info {
+        padding: 10px;
+    }
+    
+    .popap-description {
+        text-align: justify;
+        padding-bottom: 24px;
+    }
+    
+    .popap-list {
+        gap: 5px;
+    }
+    
+    .popap-close {
+        left: 218px;
     }
 
     .footer-container {
