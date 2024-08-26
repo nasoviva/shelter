@@ -148,6 +148,8 @@ background.addEventListener("click", function(event) {
     // Проверяем, что клик был не на меню
     if (!menu.contains(event.target) && menu.classList.contains("open")) {
         toggleMenu();
+    } else if (!popap.contains(event.target) && popap.classList.contains("open")) {
+      togglePopap();
     }
 });
 

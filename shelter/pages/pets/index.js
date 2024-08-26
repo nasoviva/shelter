@@ -147,9 +147,11 @@ burger.addEventListener("click", toggleMenu);
 // Обработчик клика по фону
 background.addEventListener("click", function(event) {
     // Проверяем, что клик был не на меню
-    if (!popap.contains(event.target) && popap.classList.contains("open")) {
+    if (!menu.contains(event.target) && menu.classList.contains("open")) {
+      toggleMenu();
+    } else if (!popap.contains(event.target) && popap.classList.contains("open")) {
       togglePopap();
-    }
+    } 
 });
 
 
