@@ -181,22 +181,6 @@ a {
     color: #FFFFFF;
 }
 
-/* .mobile-background {
-    display: none;
-    top: 0;
-    right: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(41, 41, 41, 0);
-    transition: background-color 0.5s linear;
-}
-
-.mobile-background.open {
-    display: block;
-    background-color: rgba(41, 41, 41, 0.6);
-} */
-
 .mobile-menu.open {
     right: 0;
 }
@@ -324,6 +308,10 @@ a {
     transition: 0.3s;
 }
 
+.slider_block {
+    /* width: 100%; */
+}
+
 .slider-pets {
     display: flex;
     flex-wrap: wrap;
@@ -343,6 +331,7 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: 0.5s;
 }
 
 .slider-el:hover {
@@ -613,7 +602,7 @@ a {
 
     .popap {
         width: 240px;
-        height: 341px;
+        height: auto;
     }
     
     .popap-img {

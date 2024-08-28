@@ -91,13 +91,24 @@ const data = {
 ]
 }
 const sliderElementsPets = document.querySelector('.slider-pets');
+const burger = document.querySelector(".burger");
+const menu = document.querySelector(".mobile-menu");
+const background = document.querySelector(".no-scroll-background");
+const body = document.querySelector("body");
+const popap = document.querySelector(".popap");
+const menuLinks = document.querySelectorAll(".mobile-nav-item");
+
+let step = 0;
 
 //Функция заполнения слайдера
 function populateSlidesPets() {
   sliderElementsPets.innerHTML = '';
+
   for (let i = 0; i < 8; i++) {
+    let index = (step + i) % data.items.length;
     const slide = document.createElement('div');
       slide.className = 'slider-el';
+      slide.style.left = `${i * 100}px`;
       slide.innerHTML = `
       <img class="slider-img" src="${data.items[i].img}" alt="${data.items[i].name}">
       <p class="slider-name">${data.items[i].name}</p>
@@ -105,17 +116,11 @@ function populateSlidesPets() {
       `;
       sliderElementsPets.appendChild(slide);
   }
+  populatePopap();
 }
 
+//вызов функции заполнения слайдов
 populateSlidesPets();
-
-
-var burger = document.querySelector(".burger");
-var menu = document.querySelector(".mobile-menu");
-var background = document.querySelector(".no-scroll-background");
-var body = document.querySelector("body");
-var popap = document.querySelector(".popap");
-
 
 // Функция для переключения состояния меню и фона
 function toggleMenu() {
@@ -141,6 +146,42 @@ function togglePopap() {
   }
 }
 
+//Функция для заполнения попап
+function populatePopap() {
+  const slides = document.querySelectorAll(".slider-el");
+  slides.forEach(slide => {
+    slide.addEventListener('click', function () {
+      const nameElement = slide.querySelector(".slider-name");
+      const petName = nameElement.textContent;
+
+      for (let item of data.items) {
+        if (item.name === petName) {
+          popap.innerHTML = `
+            <div class="popap-close"><img src="../../assets/icons/vector.png" alt="close"></div>
+            <img class="popap-img" src="${item.img}" alt="${item.name}">
+            <div class="popap-info">
+              <h3 class="popap-name">${item.name}</h3>
+              <h4 class="popap-animal">${item.type} - ${item.breed}</h4>
+              <p class="popap-description">${item.description}</p>
+              <ul class="popap-list">
+                <li class="popap-age"><b>Age:</b> ${item.age}</li>
+                <li class="popap-inoculations"><b>Inoculations:</b> ${item.inoculations.join(', ')}</li>
+                <li class="popap-diseases"><b>Diseases:</b> ${item.diseases.join(', ')}</li>
+                <li class="popap-parasites"><b>Parasites:</b> ${item.parasites.join(', ')}</li>
+              </ul>
+            </div>
+          `;
+        }
+      }
+      togglePopap();
+
+      // Обработчик клика по крестику
+      const close = document.querySelector(".popap-close");
+      close.addEventListener("click", togglePopap);
+    });
+  });
+}
+
 // Обработчик клика по бургер-меню
 burger.addEventListener("click", toggleMenu);
 
@@ -154,9 +195,6 @@ background.addEventListener("click", function(event) {
     } 
 });
 
-
-var menuLinks = document.querySelectorAll(".mobile-nav-item");
-
 // Обработчики кликов на ссылки в меню
 menuLinks.forEach(function(link) {
     link.addEventListener("click", function() {
@@ -164,51 +202,4 @@ menuLinks.forEach(function(link) {
             toggleMenu();
         }
     });
-});
-
-
-var slidesPets = document.querySelectorAll(".slider-pets .slider-el");
-
-// Обработчик клика по слайдеру
-slidesPets.forEach(slide => {
-  slide.addEventListener('click', function(event) {
-    let nameElement = slide.querySelector(".slider-name");
-    let petName = nameElement.textContent;
-    for (let i = 0; i < data.items.length; i++) {
-      if (data.items[i].name === petName) {
-    popap.innerHTML = `
-     <div class="popap-close"><img src="../../assets/icons/vector.png" alt="close"></div>
-     <img class="popap-img" src="${data.items[i].img}" alt="${data.items[i].name}">
-     <div class="popap-info">
-      <h3 class="popap-name">${data.items[i].name}</h3>
-      <h4 class="popap-animal">${data.items[i].type} - ${data.items[i].breed}</h4>
-      <p class="popap-description">${data.items[i].description}</p>
-      <ul class="popap-list">
-        <li class="popap-age"><b>Age:</b> ${data.items[i].age}</li>
-        <li class="popap-inoculations"><b>Inoculations:</b> ${data.items[i].inoculations}</li>
-        <li class="popap-diseases"><b>Diseases:</b> ${data.items[i].diseases}</li>
-        <li class="popap-parasites"><b>Parasites:</b> ${data.items[i].parasites}</li>
-      </ul>
-     </div>
-     `;
-    }
-  }
-  togglePopap();
-  // Обработчик клика по крестику
-  var close = document.querySelector(".popap-close");
-  close.addEventListener("click", togglePopap);
-  });
-});
-
-
-function moveSlider(direction) {
-    
-}
-
-document.querySelector('.next-paginator').addEventListener('click', () => {
-  moveSlider('next');
- });
-
-document.querySelector('.prev-paginator').addEventListener('click', () => {
-  moveSlider('prev');
 });
