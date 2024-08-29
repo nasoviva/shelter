@@ -29,7 +29,7 @@ const data = {
     "breed": "Golden Retriever",
     "description": "Woody is a handsome 3 1/2 year old boy. Woody does know basic commands and is a smart pup. Since he is on the stronger side, he will learn a lot from your training. Woody will be happier when he finds a new family that can spend a lot of time with him.",
     "age": "3 years 6 months",
-    "inoculations": ["adenovirus", "distemper"],
+    "inoculations": ["adenovirus"],
     "diseases": ["right back leg mobility reduced"],
     "parasites": ["none"]
   },
@@ -62,7 +62,7 @@ const data = {
     "breed": "British Shorthair",
     "description": "Timmy is an adorable grey british shorthair male. He loves to play and snuggle. He is neutered and up to date on age appropriate vaccinations. He can be chatty and enjoys being held. Timmy has a lot to say and wants a person to share his thoughts with.",
     "age": "2 years 3 months",
-    "inoculations": ["calicivirus", "viral rhinotracheitis"],
+    "inoculations": ["calicivirus"],
     "diseases": ["kidney stones"],
     "parasites": ["none"]
   },
@@ -84,40 +84,142 @@ const data = {
     "breed": "Jack Russell Terrier",
     "description": "This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.",
     "age": "8 years",
-    "inoculations": ["bordetella bronchiseptica", "leptospirosis"],
-    "diseases": ["deafness", "blindness"],
+    "inoculations": ["leptospirosis"],
+    "diseases": ["deafness"],
     "parasites": ["lice", "fleas"]
   }
 ]
 }
 const sliderElementsPets = document.querySelector('.slider-pets');
+const pageNumberElement = document.querySelector('.slider-paginator-active')
+const prevPage = document.querySelector('.slider-paginator-prev');
+const nextPage = document.querySelector('.slider-paginator-next');
+const firstPage = document.querySelector('.slider-paginator-first');
+const lastPage = document.querySelector('.slider-paginator-last');
 const burger = document.querySelector(".burger");
 const menu = document.querySelector(".mobile-menu");
-const background = document.querySelector(".no-scroll-background");
+const backgroundMenu = document.querySelector("header .no-scroll-background");
+const backgroundPopap = document.querySelector("main .no-scroll-background");
 const body = document.querySelector("body");
 const popap = document.querySelector(".popap");
 const menuLinks = document.querySelectorAll(".mobile-nav-item");
 
+// Функция перемешивания массива (алгоритм Фишера-Йейтса)
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+// Функция дублирование данных, чтобы создать 6 страниц по 8 элементов
+const duplicatedItems = [];
+for (let i = 0; i < 6; i++) {
+  duplicatedItems.push(...(shuffle([...data.items])));
+}
+
+data.items = duplicatedItems;
+const totalItems = data.items.length;
+let itemsPerPage = 8;
+const totalPages = Math.ceil(totalItems / itemsPerPage);
 let step = 0;
+let currentPage = 1;
+
+// Функция обновления номера страницы
+function updatePageNumber() {
+  currentPage = Math.floor(step / itemsPerPage) + 1;
+  pageNumberElement.textContent = currentPage;
+}
+
+//Функция обновления состояния стрелок
+function updateButtons() {
+  firstPage.classList.toggle('inactive', step === 0);
+  prevPage.classList.toggle('inactive', step === 0);
+  nextPage.classList.toggle('inactive', step + itemsPerPage >= totalItems);
+  lastPage.classList.toggle('inactive', step + itemsPerPage >= totalItems);
+}
+
+//Функция обновления количества слайдов на странице
+function updateSlidesToShow() {
+  const width = window.innerWidth;
+
+  if (width <= 768) {
+    itemsPerPage = 6;
+  } else if (width <= 320) {
+    itemsPerPage = 3; 
+  } else {
+    itemsPerPage = 8;
+  }
+  
+  totalPages = Math.ceil(totalItems / itemsPerPage);
+  step = Math.min(step, (totalPages - 1) * itemsPerPage); // Корректируем step, если он выходит за границы
+  populateSlidesPets(); 
+}
 
 //Функция заполнения слайдера
 function populateSlidesPets() {
   sliderElementsPets.innerHTML = '';
 
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < itemsPerPage; i++) {
     let index = (step + i) % data.items.length;
     const slide = document.createElement('div');
       slide.className = 'slider-el';
       slide.style.left = `${i * 100}px`;
       slide.innerHTML = `
-      <img class="slider-img" src="${data.items[i].img}" alt="${data.items[i].name}">
-      <p class="slider-name">${data.items[i].name}</p>
+      <img class="slider-img" src="${data.items[index].img}" alt="${data.items[index].name}">
+      <p class="slider-name">${data.items[index].name}</p>
       <button class="our-friends-button slider-button">Learn more</button>
       `;
       sliderElementsPets.appendChild(slide);
   }
   populatePopap();
+  updatePageNumber(); 
+  updateButtons();
 }
+
+// Функция для переключения стрелки вправо
+function sliderNext() {
+  if (step + itemsPerPage < totalItems) {
+    step += itemsPerPage;
+    populateSlidesPets();
+  }
+}
+
+// Функция для переключения стрелки влево
+function sliderPrev() {
+  if (step > 0) {
+    step -= itemsPerPage;
+    populateSlidesPets();
+  }
+}
+
+// Функция для переключения стрелки на первую страницу
+function sliderToFirstPage() {
+  step = 0;
+  populateSlidesPets();
+}
+
+// Функция для переключения стрелки на последнюю страницу
+function sliderToLastPage() {
+  step = Math.floor((totalItems - 1) / itemsPerPage) * itemsPerPage;
+  populateSlidesPets();
+}
+
+// Обработчик клика по стрелкам
+prevPage.addEventListener('click', sliderPrev);
+nextPage.addEventListener('click', sliderNext);
+firstPage.addEventListener('click', sliderToFirstPage);
+lastPage.addEventListener('click', sliderToLastPage);
+
+// Обработка изменения размера окна
+window.addEventListener('resize', () => {
+  updateSlidesToShow();
+  populateSlidesPets();
+});
+
+// Обработка загрузки страницы
+window.addEventListener('load', updateSlidesToShow);
 
 //вызов функции заполнения слайдов
 populateSlidesPets();
@@ -127,7 +229,7 @@ function toggleMenu() {
     burger.classList.toggle("rotate");
     burger.classList.toggle("change-color");
     menu.classList.toggle("open");
-    background.classList.toggle("open");
+    backgroundMenu.classList.toggle("open");
     if (menu.classList.contains("open")) {
         body.classList.add("no-scroll");
     } else {
@@ -138,7 +240,7 @@ function toggleMenu() {
 // Функция для переключения состояния попапа и фона
 function togglePopap() {
   popap.classList.toggle("open");
-  background.classList.toggle("open");
+  backgroundPopap.classList.toggle("open");
   if (popap.classList.contains("open")) {
       body.classList.add("no-scroll");
   } else {
@@ -186,13 +288,17 @@ function populatePopap() {
 burger.addEventListener("click", toggleMenu);
 
 // Обработчик клика по фону
-background.addEventListener("click", function(event) {
-    // Проверяем, что клик был не на меню
+backgroundMenu.addEventListener("click", function(event) {
     if (!menu.contains(event.target) && menu.classList.contains("open")) {
       toggleMenu();
-    } else if (!popap.contains(event.target) && popap.classList.contains("open")) {
-      togglePopap();
-    } 
+    }
+});
+
+// Обработчик клика по фону
+backgroundPopap.addEventListener("click", function(event) {
+  if (!popap.contains(event.target) && popap.classList.contains("open")) {
+    togglePopap();
+  } 
 });
 
 // Обработчики кликов на ссылки в меню
