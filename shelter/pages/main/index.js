@@ -101,22 +101,25 @@ const body = document.querySelector("body");
 const popap = document.querySelector(".popap");
 
 let step = 0;
+let itemsPerPage = 3;
 
 //Функция для определения количества слайдов на странице
 function updateSlidesToShow() {
   const width = window.innerWidth;
-  if (width >= 1280) {
-    return 3;
-  } else if (width >= 768) {
-    return 2;
+  
+  if (width <= 320) {
+    itemsPerPage = 1;
+  } else if (width <= 768) {
+    itemsPerPage = 2;
   } else {
-    return 1;
+    itemsPerPage = 3;
   }
+  //populateSlides();
 }
 
 // Функция для заполнения слайдов
 function populateSlides() {
-  const itemsPerPage = updateSlidesToShow();
+  updateSlidesToShow();
   sliderElements.innerHTML = '';
 
   for (let i = 0; i < itemsPerPage; i++) {
@@ -139,7 +142,7 @@ populateSlides();
 
 // Функция для переключения стрелки вправо
 function sliderRight() {
-  const itemsPerPage = updateSlidesToShow();
+  updateSlidesToShow();
   const currentSlides = document.querySelectorAll('.slider-el');
 
   for (let i = 0; i < currentSlides.length; i++) {
@@ -151,7 +154,7 @@ function sliderRight() {
 
 // Функция для переключения стрелки влево
 function sliderLeft() {
-  const itemsPerPage = updateSlidesToShow();
+  updateSlidesToShow();
   const currentSlides = document.querySelectorAll('.slider-el');
 
   for (let i = 0; i < currentSlides.length; i++) {
@@ -220,6 +223,12 @@ function populatePopap() {
     });
   });
 }
+
+// Обработчик изменения размера окна
+window.addEventListener('resize', updateSlidesToShow);
+
+// Обработчик загрузки страницы
+window.addEventListener('load', updateSlidesToShow);
 
 // Обработчик клика по стрелкам
 document.querySelector('.prev-paginator').addEventListener('click', sliderLeft);

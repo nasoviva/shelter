@@ -179,7 +179,6 @@ function populateSlidesPets() {
       sliderElementsPets.appendChild(slide);
   }
   populatePopap();
-  // updatePageNumber(); 
   updateButtons();
 }
 
