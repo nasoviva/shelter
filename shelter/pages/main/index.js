@@ -102,11 +102,24 @@ const popap = document.querySelector(".popap");
 
 let step = 0;
 
+//Функция для определения количества слайдов на странице
+function updateSlidesToShow() {
+  const width = window.innerWidth;
+  if (width >= 1280) {
+    return 3;
+  } else if (width >= 768) {
+    return 2;
+  } else {
+    return 1;
+  }
+}
+
 // Функция для заполнения слайдов
 function populateSlides() {
+  const itemsPerPage = updateSlidesToShow();
   sliderElements.innerHTML = '';
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < itemsPerPage; i++) {
     let index = (step + i) % data.items.length;
     const slide = document.createElement('div');
     slide.className = 'slider-el';
@@ -126,23 +139,25 @@ populateSlides();
 
 // Функция для переключения стрелки вправо
 function sliderRight() {
+  const itemsPerPage = updateSlidesToShow();
   const currentSlides = document.querySelectorAll('.slider-el');
 
   for (let i = 0; i < currentSlides.length; i++) {
-    currentSlides[i].style.left = `${(i - 1) * 100}px`;
+    currentSlides[i].style.left = `${(i - itemsPerPage) * 100}px`;
   }
-  step = (step + 1) % data.items.length;
+  step = (step + itemsPerPage) % data.items.length;
   populateSlides();
 }
 
 // Функция для переключения стрелки влево
 function sliderLeft() {
+  const itemsPerPage = updateSlidesToShow();
   const currentSlides = document.querySelectorAll('.slider-el');
 
   for (let i = 0; i < currentSlides.length; i++) {
-    currentSlides[i].style.left = `${(i + 1) * 100}px`;
+    currentSlides[i].style.left = `${(i + itemsPerPage) * 100}px`;
   }
-  step = (step - 1 + data.items.length) % data.items.length;
+  step = (step - itemsPerPage + data.items.length) % data.items.length;
   populateSlides();
 }
 

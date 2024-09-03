@@ -113,16 +113,20 @@ function shuffle(array) {
   return array;
 }
 
-// Функция дублирование данных, чтобы создать 6 страниц по 8 элементов
-const duplicatedItems = [];
-for (let i = 0; i < 6; i++) {
-  duplicatedItems.push(...(shuffle([...data.items])));
+// Функция дублирования данных, чтобы создать 6 страниц по 8 элементов
+function prepareData() {
+  const duplicatedItems = [];
+  for (let i = 0; i < 6; i++) {
+    duplicatedItems.push(...(shuffle([...data.items])));
+  }
+  data.items = duplicatedItems;
 }
 
-data.items = duplicatedItems;
+prepareData();
+
 const totalItems = data.items.length;
 let itemsPerPage = 8;
-const totalPages = Math.ceil(totalItems / itemsPerPage);
+let totalPages = 6;
 let step = 0;
 let currentPage = 1;
 
@@ -138,23 +142,24 @@ function updateButtons() {
   prevPage.classList.toggle('inactive', step === 0);
   nextPage.classList.toggle('inactive', step + itemsPerPage >= totalItems);
   lastPage.classList.toggle('inactive', step + itemsPerPage >= totalItems);
+  updatePageNumber();
 }
 
 //Функция обновления количества слайдов на странице
 function updateSlidesToShow() {
   const width = window.innerWidth;
-
-  if (width <= 768) {
+  
+  if (width <= 320) {
+    itemsPerPage = 3;
+  } else if (width <= 768) {
     itemsPerPage = 6;
-  } else if (width <= 320) {
-    itemsPerPage = 3; 
   } else {
     itemsPerPage = 8;
   }
-  
-  totalPages = Math.ceil(totalItems / itemsPerPage);
-  step = Math.min(step, (totalPages - 1) * itemsPerPage); // Корректируем step, если он выходит за границы
-  populateSlidesPets(); 
+
+  totalPages = Math.ceil(48 / itemsPerPage);
+  step = Math.min(step, (totalPages - 1) * itemsPerPage); 
+  populateSlidesPets();
 }
 
 //Функция заполнения слайдера
@@ -174,7 +179,7 @@ function populateSlidesPets() {
       sliderElementsPets.appendChild(slide);
   }
   populatePopap();
-  updatePageNumber(); 
+  // updatePageNumber(); 
   updateButtons();
 }
 
@@ -212,13 +217,10 @@ nextPage.addEventListener('click', sliderNext);
 firstPage.addEventListener('click', sliderToFirstPage);
 lastPage.addEventListener('click', sliderToLastPage);
 
-// Обработка изменения размера окна
-window.addEventListener('resize', () => {
-  updateSlidesToShow();
-  populateSlidesPets();
-});
+// Обработчик изменения размера окна
+window.addEventListener('resize', updateSlidesToShow);
 
-// Обработка загрузки страницы
+// Обработчик загрузки страницы
 window.addEventListener('load', updateSlidesToShow);
 
 //вызов функции заполнения слайдов
