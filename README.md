@@ -1,5 +1,5 @@
 <div align="center">
-  <h1><b>Shelter</b></h1>
+  <h1><a href="https://nasoviva.github.io/shelter/shelter/pages/index.html">Shelter</a></h1>
 </div>
 <br>
 <p align="center">This project is about creating a website with two pages, making it
